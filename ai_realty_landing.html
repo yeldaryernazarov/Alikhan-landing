@@ -154,9 +154,466 @@
             background: rgba(102, 126, 234, 0.1);
         }
 
-        .language-option.active {
-            background: rgba(102, 126, 234, 0.2);
+        /* How It Works Section */
+        .how-it-works {
+            position: relative;
+            z-index: 10;
+            padding: 6rem 2rem;
+            background: rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(20px);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .how-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .how-it-works h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: white;
+            margin-bottom: 1rem;
+        }
+
+        .how-subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 4rem;
+        }
+
+        .steps-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 4rem;
+        }
+
+        .step-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            border-radius: 20px;
+            padding: 2.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+            position: relative;
+            animation: slideUp 0.6s ease-out both;
+        }
+
+        .step-card:nth-child(1) { animation-delay: 0.1s; }
+        .step-card:nth-child(2) { animation-delay: 0.2s; }
+        .step-card:nth-child(3) { animation-delay: 0.3s; }
+
+        .step-card:hover {
+            transform: translateY(-10px);
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .step-number {
+            position: absolute;
+            top: -20px;
+            left: 2.5rem;
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(45deg, #ff6b6b, #ee5a24);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            color: white;
+            font-size: 1.2rem;
+        }
+
+        .step-content h3 {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 1rem;
+            margin-top: 0.5rem;
+        }
+
+        .step-content p {
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .step-features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .step-tag {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        /* Pricing Section */
+        .pricing {
+            position: relative;
+            z-index: 10;
+            padding: 6rem 2rem;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .pricing-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .pricing h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: white;
+            margin-bottom: 1rem;
+        }
+
+        .pricing-subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 3rem;
+        }
+
+        .pricing-toggle {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 3rem;
+        }
+
+        .toggle-option {
+            color: rgba(255, 255, 255, 0.7);
             font-weight: 600;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .toggle-option.active {
+            color: white;
+        }
+
+        .toggle-switch {
+            position: relative;
+            width: 60px;
+            height: 30px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 15px;
+            cursor: pointer;
+        }
+
+        .toggle-slider {
+            position: absolute;
+            top: 3px;
+            left: 3px;
+            width: 24px;
+            height: 24px;
+            background: linear-gradient(45deg, #ff6b6b, #ee5a24);
+            border-radius: 50%;
+            transition: transform 0.3s ease;
+        }
+
+        .save-badge {
+            background: linear-gradient(45deg, #ff6b6b, #ee5a24);
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .pricing-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            border-radius: 20px;
+            padding: 2.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+            position: relative;
+            animation: slideUp 0.6s ease-out both;
+        }
+
+        .pricing-card:nth-child(1) { animation-delay: 0.1s; }
+        .pricing-card:nth-child(2) { animation-delay: 0.2s; }
+        .pricing-card:nth-child(3) { animation-delay: 0.3s; }
+
+        .pricing-card:hover {
+            transform: translateY(-10px);
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .pricing-card.popular {
+            border: 2px solid rgba(255, 107, 107, 0.5);
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .popular-badge {
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(45deg, #ff6b6b, #ee5a24);
+            color: white;
+            padding: 0.5rem 1.5rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        .pricing-header h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 0.5rem;
+        }
+
+        .price {
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: white;
+            margin-bottom: 0.5rem;
+        }
+
+        .price small {
+            font-size: 1rem;
+            font-weight: 400;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .pricing-header p {
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 2rem;
+        }
+
+        .pricing-features {
+            list-style: none;
+            margin-bottom: 2rem;
+        }
+
+        .pricing-features li {
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 0.8rem;
+            padding-left: 0.5rem;
+        }
+
+        .pricing-btn {
+            width: 100%;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .pricing-btn.primary {
+            background: linear-gradient(45deg, #ff6b6b, #ee5a24);
+            color: white;
+        }
+
+        .pricing-btn.primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(255, 107, 107, 0.4);
+        }
+
+        .pricing-btn.secondary {
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .pricing-btn.secondary:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-3px);
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        /* Contact Section */
+        .contact {
+            position: relative;
+            z-index: 10;
+            padding: 6rem 2rem;
+            background: rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(20px);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .contact-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: start;
+        }
+
+        .contact-info h2 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: white;
+            margin-bottom: 1rem;
+        }
+
+        .contact-info p {
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 3rem;
+            line-height: 1.6;
+        }
+
+        .contact-methods {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .contact-method {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(45deg, #ff6b6b, #ee5a24);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+        }
+
+        .contact-method h4 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: white;
+            margin-bottom: 0.2rem;
+        }
+
+        .contact-method p {
+            color: rgba(255, 255, 255, 0.8);
+            margin: 0;
+        }
+
+        .contact-form {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            border-radius: 20px;
+            padding: 2.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .contact-form h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 2rem;
+        }
+
+        .form-group {
+            position: relative;
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 10px;
+            color: white;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: rgba(255, 107, 107, 0.6);
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .form-group label {
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            color: rgba(255, 255, 255, 0.7);
+            transition: all 0.3s ease;
+            pointer-events: none;
+            background: transparent;
+        }
+
+        .form-group input:focus + label,
+        .form-group input:not(:placeholder-shown) + label,
+        .form-group select:focus + label,
+        .form-group select:not([value=""]) + label,
+        .form-group textarea:focus + label,
+        .form-group textarea:not(:placeholder-shown) + label {
+            top: -0.5rem;
+            left: 0.8rem;
+            font-size: 0.8rem;
+            color: rgba(255, 107, 107, 0.9);
+            background: rgba(102, 126, 234, 0.2);
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+        }
+
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: transparent;
+        }
+
+        .form-group select option {
+            background: rgba(102, 126, 234, 0.9);
+            color: white;
+        }
+
+        .form-submit {
+            width: 100%;
+            padding: 1rem 2rem;
+            background: linear-gradient(45deg, #ff6b6b, #ee5a24);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .form-submit:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(255, 107, 107, 0.4);
         }
 
         /* Hero Section */
@@ -454,6 +911,39 @@
                 right: 0;
                 left: auto;
             }
+
+            .how-it-works {
+                padding: 4rem 1rem;
+            }
+
+            .steps-container {
+                grid-template-columns: 1fr;
+            }
+
+            .step-card {
+                padding: 2rem;
+            }
+
+            .pricing {
+                padding: 4rem 1rem;
+            }
+
+            .pricing-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact {
+                padding: 4rem 1rem;
+            }
+
+            .contact-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .contact-form {
+                padding: 2rem;
+            }
         }
     </style>
 </head>
@@ -504,7 +994,7 @@
             Stop overpaying for apartments. Our AI analyzes 74% of buyers' key concerns: affordability, mortgage options, and neighborhood fit in Kazakhstan.
         </p>
         <div class="cta-buttons">
-            <a href="#" class="btn-primary" data-translate="btn-get-recommendations">Get AI Recommendations</a>
+            <a href="#contact" class="btn-primary" data-translate="btn-get-recommendations">Get AI Recommendations</a>
             <a href="#" class="btn-secondary" data-translate="btn-watch-demo">Watch Demo</a>
         </div>
     </section>
@@ -553,6 +1043,218 @@
                     <h3 data-translate="feature3-title">Personalized Recommendations</h3>
                     <p data-translate="feature3-desc">Unlike unreliable platforms users distrust, our AI provides transparent, data-driven recommendations based on your income, preferences, and financial goals.</p>
                 </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h3 data-translate="feature4-title">Market Analysis & Trends</h3>
+                    <p data-translate="feature4-desc">Get real-time market insights, price predictions, and neighborhood appreciation forecasts to make data-driven investment decisions in Kazakhstan's dynamic market.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔒</div>
+                    <h3 data-translate="feature5-title">Transparent Pricing Data</h3>
+                    <p data-translate="feature5-desc">Access verified property prices, hidden costs, and total ownership expenses. No more surprises or inflated listings - just honest, transparent data.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3 data-translate="feature6-title">Instant Comparisons</h3>
+                    <p data-translate="feature6-desc">Compare multiple properties, financing options, and neighborhoods in seconds. Save weeks of research with our AI-powered comparison engine.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="how-it-works" id="how-it-works">
+        <div class="how-container">
+            <h2 data-translate="how-title">How PropertyAI Works</h2>
+            <p class="how-subtitle" data-translate="how-subtitle">Get personalized apartment recommendations in 3 simple steps</p>
+            
+            <div class="steps-container">
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3 data-translate="step1-title">Tell Us Your Needs</h3>
+                        <p data-translate="step1-desc">Share your budget, preferred location, family size, and lifestyle preferences. Our AI analyzes your financial capacity and requirements.</p>
+                        <div class="step-features">
+                            <span class="step-tag" data-translate="step1-tag1">Budget Analysis</span>
+                            <span class="step-tag" data-translate="step1-tag2">Lifestyle Matching</span>
+                            <span class="step-tag" data-translate="step1-tag3">Financial Assessment</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3 data-translate="step2-title">AI Analyzes the Market</h3>
+                        <p data-translate="step2-desc">Our algorithm scans thousands of properties across Kazakhstan, evaluates mortgage options, and identifies the best matches for your criteria.</p>
+                        <div class="step-features">
+                            <span class="step-tag" data-translate="step2-tag1">Market Scanning</span>
+                            <span class="step-tag" data-translate="step2-tag2">Mortgage Matching</span>
+                            <span class="step-tag" data-translate="step2-tag3">Price Verification</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3 data-translate="step3-title">Get Smart Recommendations</h3>
+                        <p data-translate="step3-desc">Receive a ranked list of apartments with complete financial breakdown, neighborhood insights, and pre-approved mortgage options.</p>
+                        <div class="step-features">
+                            <span class="step-tag" data-translate="step3-tag1">Ranked Results</span>
+                            <span class="step-tag" data-translate="step3-tag2">Financial Breakdown</span>
+                            <span class="step-tag" data-translate="step3-tag3">Pre-approval</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="pricing" id="pricing">
+        <div class="pricing-container">
+            <h2 data-translate="pricing-title">Simple, Transparent Pricing</h2>
+            <p class="pricing-subtitle" data-translate="pricing-subtitle">Choose the plan that fits your property search needs</p>
+            
+            <div class="pricing-toggle">
+                <span class="toggle-option active" data-translate="monthly">Monthly</span>
+                <div class="toggle-switch">
+                    <div class="toggle-slider"></div>
+                </div>
+                <span class="toggle-option" data-translate="yearly">Yearly</span>
+                <span class="save-badge" data-translate="save-20">Save 20%</span>
+            </div>
+            
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3 data-translate="plan-starter">Starter</h3>
+                        <div class="price">
+                            <span data-translate="free">Free</span>
+                        </div>
+                        <p data-translate="plan-starter-desc">Perfect for first-time buyers</p>
+                    </div>
+                    <ul class="pricing-features">
+                        <li data-translate="feature-starter-1">✓ 3 property recommendations per month</li>
+                        <li data-translate="feature-starter-2">✓ Basic neighborhood information</li>
+                        <li data-translate="feature-starter-3">✓ Government program eligibility check</li>
+                        <li data-translate="feature-starter-4">✓ Email support</li>
+                    </ul>
+                    <button class="pricing-btn secondary" data-translate="get-started">Get Started</button>
+                </div>
+                
+                <div class="pricing-card popular">
+                    <div class="popular-badge" data-translate="most-popular">Most Popular</div>
+                    <div class="pricing-header">
+                        <h3 data-translate="plan-pro">Professional</h3>
+                        <div class="price">
+                            <span class="monthly-price">₸12,000</span>
+                            <span class="yearly-price hidden">₸115,200</span>
+                            <small data-translate="per-month">/ month</small>
+                        </div>
+                        <p data-translate="plan-pro-desc">For serious apartment hunters</p>
+                    </div>
+                    <ul class="pricing-features">
+                        <li data-translate="feature-pro-1">✓ Unlimited property recommendations</li>
+                        <li data-translate="feature-pro-2">✓ Detailed market analysis & trends</li>
+                        <li data-translate="feature-pro-3">✓ Mortgage pre-approval assistance</li>
+                        <li data-translate="feature-pro-4">✓ Neighborhood lifestyle reports</li>
+                        <li data-translate="feature-pro-5">✓ Price negotiation insights</li>
+                        <li data-translate="feature-pro-6">✓ Priority phone support</li>
+                    </ul>
+                    <button class="pricing-btn primary" data-translate="start-free-trial">Start Free Trial</button>
+                </div>
+                
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3 data-translate="plan-expert">Expert</h3>
+                        <div class="price">
+                            <span class="monthly-price">₸25,000</span>
+                            <span class="yearly-price hidden">₸240,000</span>
+                            <small data-translate="per-month">/ month</small>
+                        </div>
+                        <p data-translate="plan-expert-desc">For real estate investors</p>
+                    </div>
+                    <ul class="pricing-features">
+                        <li data-translate="feature-expert-1">✓ Everything in Professional</li>
+                        <li data-translate="feature-expert-2">✓ Investment ROI calculations</li>
+                        <li data-translate="feature-expert-3">✓ Portfolio optimization</li>
+                        <li data-translate="feature-expert-4">✓ Custom market reports</li>
+                        <li data-translate="feature-expert-5">✓ Direct realtor connections</li>
+                        <li data-translate="feature-expert-6">✓ 24/7 dedicated support</li>
+                    </ul>
+                    <button class="pricing-btn secondary" data-translate="contact-sales">Contact Sales</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="contact-container">
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h2 data-translate="contact-title">Get In Touch</h2>
+                    <p data-translate="contact-desc">Ready to find your perfect apartment? Have questions about our AI recommendations? We're here to help you make the smartest property decision.</p>
+                    
+                    <div class="contact-methods">
+                        <div class="contact-method">
+                            <div class="contact-icon">📧</div>
+                            <div>
+                                <h4 data-translate="email">Email Us</h4>
+                                <p>hello@propertyai.kz</p>
+                            </div>
+                        </div>
+                        <div class="contact-method">
+                            <div class="contact-icon">📱</div>
+                            <div>
+                                <h4 data-translate="phone">Call Us</h4>
+                                <p>+7 (727) 350-7890</p>
+                            </div>
+                        </div>
+                        <div class="contact-method">
+                            <div class="contact-icon">🏢</div>
+                            <div>
+                                <h4 data-translate="office">Office</h4>
+                                <p data-translate="address">Almaty, Kazakhstan<br>Business Center "Esentai"</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <h3 data-translate="form-title">Send us a message</h3>
+                    <form>
+                        <div class="form-group">
+                            <input type="text" placeholder="" required>
+                            <label data-translate="form-name">Full Name</label>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" placeholder="" required>
+                            <label data-translate="form-email">Email Address</label>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" placeholder="" required>
+                            <label data-translate="form-phone">Phone Number</label>
+                        </div>
+                        <div class="form-group">
+                            <select required>
+                                <option value="" disabled selected></option>
+                                <option value="general" data-translate="inquiry-general">General Inquiry</option>
+                                <option value="demo" data-translate="inquiry-demo">Request Demo</option>
+                                <option value="pricing" data-translate="inquiry-pricing">Pricing Question</option>
+                                <option value="support" data-translate="inquiry-support">Technical Support</option>
+                            </select>
+                            <label data-translate="form-subject">Subject</label>
+                        </div>
+                        <div class="form-group">
+                            <textarea placeholder="" rows="4" required></textarea>
+                            <label data-translate="form-message">Message</label>
+                        </div>
+                        <button type="submit" class="form-submit" data-translate="send-message">Send Message</button>
+                    </form>
+                </div>
             </div>
         </div>
     </section>
@@ -587,6 +1289,79 @@
                 'feature2-desc': 'Navigate government subsidies like "7-20-25" and "Otau" programs alongside commercial options. Find the lowest rates from our database of verified lenders.',
                 'feature3-title': 'Personalized Recommendations',
                 'feature3-desc': 'Unlike unreliable platforms users distrust, our AI provides transparent, data-driven recommendations based on your income, preferences, and financial goals.',
+                'feature4-title': 'Market Analysis & Trends',
+                'feature4-desc': 'Get real-time market insights, price predictions, and neighborhood appreciation forecasts to make data-driven investment decisions in Kazakhstan\'s dynamic market.',
+                'feature5-title': 'Transparent Pricing Data',
+                'feature5-desc': 'Access verified property prices, hidden costs, and total ownership expenses. No more surprises or inflated listings - just honest, transparent data.',
+                'feature6-title': 'Instant Comparisons',
+                'feature6-desc': 'Compare multiple properties, financing options, and neighborhoods in seconds. Save weeks of research with our AI-powered comparison engine.',
+                'how-title': 'How PropertyAI Works',
+                'how-subtitle': 'Get personalized apartment recommendations in 3 simple steps',
+                'step1-title': 'Tell Us Your Needs',
+                'step1-desc': 'Share your budget, preferred location, family size, and lifestyle preferences. Our AI analyzes your financial capacity and requirements.',
+                'step1-tag1': 'Budget Analysis',
+                'step1-tag2': 'Lifestyle Matching',
+                'step1-tag3': 'Financial Assessment',
+                'step2-title': 'AI Analyzes the Market',
+                'step2-desc': 'Our algorithm scans thousands of properties across Kazakhstan, evaluates mortgage options, and identifies the best matches for your criteria.',
+                'step2-tag1': 'Market Scanning',
+                'step2-tag2': 'Mortgage Matching',
+                'step2-tag3': 'Price Verification',
+                'step3-title': 'Get Smart Recommendations',
+                'step3-desc': 'Receive a ranked list of apartments with complete financial breakdown, neighborhood insights, and pre-approved mortgage options.',
+                'step3-tag1': 'Ranked Results',
+                'step3-tag2': 'Financial Breakdown',
+                'step3-tag3': 'Pre-approval',
+                'pricing-title': 'Simple, Transparent Pricing',
+                'pricing-subtitle': 'Choose the plan that fits your property search needs',
+                'monthly': 'Monthly',
+                'yearly': 'Yearly',
+                'save-20': 'Save 20%',
+                'plan-starter': 'Starter',
+                'free': 'Free',
+                'plan-starter-desc': 'Perfect for first-time buyers',
+                'feature-starter-1': '✓ 3 property recommendations per month',
+                'feature-starter-2': '✓ Basic neighborhood information',
+                'feature-starter-3': '✓ Government program eligibility check',
+                'feature-starter-4': '✓ Email support',
+                'get-started': 'Get Started',
+                'plan-pro': 'Professional',
+                'per-month': '/ month',
+                'plan-pro-desc': 'For serious apartment hunters',
+                'feature-pro-1': '✓ Unlimited property recommendations',
+                'feature-pro-2': '✓ Detailed market analysis & trends',
+                'feature-pro-3': '✓ Mortgage pre-approval assistance',
+                'feature-pro-4': '✓ Neighborhood lifestyle reports',
+                'feature-pro-5': '✓ Price negotiation insights',
+                'feature-pro-6': '✓ Priority phone support',
+                'start-free-trial': 'Start Free Trial',
+                'most-popular': 'Most Popular',
+                'plan-expert': 'Expert',
+                'plan-expert-desc': 'For real estate investors',
+                'feature-expert-1': '✓ Everything in Professional',
+                'feature-expert-2': '✓ Investment ROI calculations',
+                'feature-expert-3': '✓ Portfolio optimization',
+                'feature-expert-4': '✓ Custom market reports',
+                'feature-expert-5': '✓ Direct realtor connections',
+                'feature-expert-6': '✓ 24/7 dedicated support',
+                'contact-sales': 'Contact Sales',
+                'contact-title': 'Get In Touch',
+                'contact-desc': 'Ready to find your perfect apartment? Have questions about our AI recommendations? We\'re here to help you make the smartest property decision.',
+                'email': 'Email Us',
+                'phone': 'Call Us',
+                'office': 'Office',
+                'address': 'Almaty, Kazakhstan<br>Business Center "Esentai"',
+                'form-title': 'Send us a message',
+                'form-name': 'Full Name',
+                'form-email': 'Email Address',
+                'form-phone': 'Phone Number',
+                'form-subject': 'Subject',
+                'inquiry-general': 'General Inquiry',
+                'inquiry-demo': 'Request Demo',
+                'inquiry-pricing': 'Pricing Question',
+                'inquiry-support': 'Technical Support',
+                'form-message': 'Message',
+                'send-message': 'Send Message',
                 'cta-title': 'Ready to Make Smarter Property Decisions?',
                 'cta-desc': 'Join thousands of Kazakhstani families who trust AI to find their perfect home within budget. Start your personalized apartment search today.',
                 'btn-start-analysis': 'Start Free Analysis'
@@ -611,6 +1386,79 @@
                 'feature2-desc': 'Изучите государственные субсидии, такие как программы "7-20-25" и "Отау", наряду с коммерческими вариантами. Найдите лучшие ставки из нашей базы проверенных кредиторов.',
                 'feature3-title': 'Персональные рекомендации',
                 'feature3-desc': 'В отличие от ненадежных платформ, которым пользователи не доверяют, наш ИИ предоставляет прозрачные рекомендации на основе данных с учетом вашего дохода, предпочтений и финансовых целей.',
+                'feature4-title': 'Анализ рынка и тренды',
+                'feature4-desc': 'Получайте аналитику рынка в реальном времени, прогнозы цен и данные о росте стоимости районов для принятия обоснованных инвестиционных решений на динамичном рынке Казахстана.',
+                'feature5-title': 'Прозрачные данные о ценах',
+                'feature5-desc': 'Получите доступ к проверенным ценам на недвижимость, скрытым расходам и общим затратам на владение. Никаких сюрпризов или завышенных предложений - только честные, прозрачные данные.',
+                'feature6-title': 'Мгновенные сравнения',
+                'feature6-desc': 'Сравнивайте несколько объектов недвижимости, варианты финансирования и районы за секунды. Экономьте недели исследований с нашим сравнительным движком на базе ИИ.',
+                'how-title': 'Как работает PropertyAI',
+                'how-subtitle': 'Получите персональные рекомендации квартир в 3 простых шага',
+                'step1-title': 'Расскажите о ваших потребностях',
+                'step1-desc': 'Поделитесь вашим бюджетом, предпочтительным местоположением, размером семьи и предпочтениями в образе жизни. Наш ИИ анализирует ваши финансовые возможности и требования.',
+                'step1-tag1': 'Анализ бюджета',
+                'step1-tag2': 'Подбор образа жизни',
+                'step1-tag3': 'Финансовая оценка',
+                'step2-title': 'ИИ анализирует рынок',
+                'step2-desc': 'Наш алгоритм сканирует тысячи объектов недвижимости по всему Казахстану, оценивает ипотечные варианты и выявляет лучшие соответствия вашим критериям.',
+                'step2-tag1': 'Сканирование рынка',
+                'step2-tag2': 'Подбор ипотеки',
+                'step2-tag3': 'Проверка цен',
+                'step3-title': 'Получите умные рекомендации',
+                'step3-desc': 'Получите ранжированный список квартир с полной финансовой разбивкой, аналитикой районов и предварительно одобренными ипотечными вариантами.',
+                'step3-tag1': 'Ранжированные результаты',
+                'step3-tag2': 'Финансовая разбивка',
+                'step3-tag3': 'Предварительное одобрение',
+                'pricing-title': 'Простые, прозрачные цены',
+                'pricing-subtitle': 'Выберите тариф, который подходит для ваших потребностей в поиске недвижимости',
+                'monthly': 'Месячно',
+                'yearly': 'Годично',
+                'save-20': 'Скидка 20%',
+                'plan-starter': 'Начальный',
+                'free': 'Бесплатно',
+                'plan-starter-desc': 'Идеально для первых покупателей',
+                'feature-starter-1': '✓ 3 рекомендации недвижимости в месяц',
+                'feature-starter-2': '✓ Базовая информация о районах',
+                'feature-starter-3': '✓ Проверка права на государственные программы',
+                'feature-starter-4': '✓ Поддержка по email',
+                'get-started': 'Начать',
+                'plan-pro': 'Профессиональный',
+                'per-month': '/ месяц',
+                'plan-pro-desc': 'Для серьезных охотников за квартирами',
+                'feature-pro-1': '✓ Неограниченные рекомендации недвижимости',
+                'feature-pro-2': '✓ Подробная аналитика рынка и тренды',
+                'feature-pro-3': '✓ Помощь с предварительным одобрением ипотеки',
+                'feature-pro-4': '✓ Отчеты об образе жизни в районах',
+                'feature-pro-5': '✓ Аналитика переговоров по цене',
+                'feature-pro-6': '✓ Приоритетная телефонная поддержка',
+                'start-free-trial': 'Начать бесплатный пробный период',
+                'most-popular': 'Самый популярный',
+                'plan-expert': 'Эксперт',
+                'plan-expert-desc': 'Для инвесторов в недвижимость',
+                'feature-expert-1': '✓ Всё из Профессионального',
+                'feature-expert-2': '✓ Расчеты ROI инвестиций',
+                'feature-expert-3': '✓ Оптимизация портфеля',
+                'feature-expert-4': '✓ Пользовательские отчеты рынка',
+                'feature-expert-5': '✓ Прямые связи с риелторами',
+                'feature-expert-6': '✓ Выделенная поддержка 24/7',
+                'contact-sales': 'Связаться с отделом продаж',
+                'contact-title': 'Свяжитесь с нами',
+                'contact-desc': 'Готовы найти свою идеальную квартиру? Есть вопросы о наших рекомендациях ИИ? Мы здесь, чтобы помочь вам принять самое умное решение о недвижимости.',
+                'email': 'Напишите нам',
+                'phone': 'Позвоните нам',
+                'office': 'Офис',
+                'address': 'Алматы, Казахстан<br>Бизнес-центр "Есентай"',
+                'form-title': 'Отправьте нам сообщение',
+                'form-name': 'Полное имя',
+                'form-email': 'Адрес электронной почты',
+                'form-phone': 'Номер телефона',
+                'form-subject': 'Тема',
+                'inquiry-general': 'Общий запрос',
+                'inquiry-demo': 'Запрос демо',
+                'inquiry-pricing': 'Вопрос о ценах',
+                'inquiry-support': 'Техническая поддержка',
+                'form-message': 'Сообщение',
+                'send-message': 'Отправить сообщение',
                 'cta-title': 'Готовы принимать более умные решения по недвижимости?',
                 'cta-desc': 'Присоединяйтесь к тысячам казахстанских семей, которые доверяют ИИ найти свой идеальный дом в рамках бюджета. Начните персональный поиск квартиры сегодня.',
                 'btn-start-analysis': 'Начать бесплатный анализ'
@@ -635,6 +1483,79 @@
                 'feature2-desc': '"7-20-25" және "Отау" сияқты мемлекеттік субсидиялармен қатар коммерциялық опцияларды зерттеңіз. Тексерілген қарыз берушілердің дерекқорынан ең төмен мөлшерлемелерді табыңыз.',
                 'feature3-title': 'Дербес ұсыныстар',
                 'feature3-desc': 'Пайдаланушылар сенбейтін сенімсіз платформалардан айырмашылығы, біздің ЖИ сіздің кіріміңіз, қалауларыңыз және қаржылық мақсаттарыңызды ескере отырып, мөлдір, деректерге негізделген ұсыныстар береді.',
+                'feature4-title': 'Нарық талдауы және тенденциялар',
+                'feature4-desc': 'Қазақстанның серпінді нарығында деректерге негізделген инвестициялық шешімдер қабылдау үшін нақты уақыттағы нарық аналитикасын, бағалар болжамын және аудандардың қадір-қасиет өсуін алыңыз.',
+                'feature5-title': 'Мөлдір баға деректері',
+                'feature5-desc': 'Тексерілген жылжымайтын мүлік бағаларына, жасырын шығындарға және жалпы меншік шығыстарына қол жеткізіңіз. Енді ешқандай сюрприздер немесе асыра көрсетілген тізімдер жоқ - тек адал, мөлдір деректер.',
+                'feature6-title': 'Лезде салыстыру',
+                'feature6-desc': 'Бірнеше жылжымайтын мүлікті, қаржыландыру опцияларын және аудандарды секундтар ішінде салыстырыңыз. Біздің ЖИ-ға негізделген салыстыру жүйесімен апталардың зерттеулерін үнемдеңіз.',
+                'how-title': 'PropertyAI қалай жұмыс істейді',
+                'how-subtitle': '3 қарапайым қадамда дербесленген пәтер ұсыныстарын алыңыз',
+                'step1-title': 'Қажеттіліктеріңізді айтыңыз',
+                'step1-desc': 'Бюджетіңізбен, қалаулы орналасуыңызбен, отбасы мөлшерімен және өмір салты қалаулымен бөлісіңіз. Біздің ЖИ сіздің қаржылық мүмкіндігіңіз бен талаптарыңызды талдайды.',
+                'step1-tag1': 'Бюджет талдауы',
+                'step1-tag2': 'Өмір салты сәйкестігі',
+                'step1-tag3': 'Қаржылық бағалау',
+                'step2-title': 'ЖИ нарықты талдайды',
+                'step2-desc': 'Біздің алгоритм бүкіл Қазақстан бойынша мыңдаған жылжымайтын мүлікті сканерлейді, ипотека опцияларын бағалайды және сіздің критерийлеріңізге ең жақсы сәйкестіктерді анықтайды.',
+                'step2-tag1': 'Нарық сканерлеуі',
+                'step2-tag2': 'Ипотека сәйкестігі',
+                'step2-tag3': 'Баға тексеруі',
+                'step3-title': 'Ақылды ұсыныстарды алыңыз',
+                'step3-desc': 'Толық қаржылық бөліністірумен, аудан аналитикасымен және алдын ала бекітілген ипотека опцияларымен рейтингтелген пәтерлер тізімін алыңыз.',
+                'step3-tag1': 'Рейтингтелген нәтижелер',
+                'step3-tag2': 'Қаржылық бөліністіру',
+                'step3-tag3': 'Алдын ала бекіту',
+                'pricing-title': 'Қарапайым, мөлдір баға белгілеу',
+                'pricing-subtitle': 'Жылжымайтын мүлік іздеу қажеттіліктеріңізге сай келетін жоспарды таңдаңыз',
+                'monthly': 'Айлық',
+                'yearly': 'Жылдық',
+                'save-20': '20% үнемдеңіз',
+                'plan-starter': 'Бастапқы',
+                'free': 'Тегін',
+                'plan-starter-desc': 'Алғашқы сатып алушылар үшін мінсіз',
+                'feature-starter-1': '✓ Айына 3 жылжымайтын мүлік ұсынысы',
+                'feature-starter-2': '✓ Аудандар туралы негізгі ақпарат',
+                'feature-starter-3': '✓ Мемлекеттік бағдарламаларға құқықты тексеру',
+                'feature-starter-4': '✓ Email қолдауы',
+                'get-started': 'Бастау',
+                'plan-pro': 'Кәсіби',
+                'per-month': '/ ай',
+                'plan-pro-desc': 'Шынайы пәтер аңшылары үшін',
+                'feature-pro-1': '✓ Шектеусіз жылжымайтын мүлік ұсыныстары',
+                'feature-pro-2': '✓ Нарықтың толық талдауы және тенденциялар',
+                'feature-pro-3': '✓ Ипотеканы алдын ала бекіту көмегі',
+                'feature-pro-4': '✓ Аудандардың өмір салты туралы есептер',
+                'feature-pro-5': '✓ Баға келіссөздері туралы аналитика',
+                'feature-pro-6': '✓ Басымдықты телефон қолдауы',
+                'start-free-trial': 'Тегін сынақ кезеңін бастау',
+                'most-popular': 'Ең танымал',
+                'plan-expert': 'Сарапшы',
+                'plan-expert-desc': 'Жылжымайтын мүлік инвесторлары үшін',
+                'feature-expert-1': '✓ Кәсіби жоспардың барлығы',
+                'feature-expert-2': '✓ Инвестиция ROI есептеулері',
+                'feature-expert-3': '✓ Портфолио оңтайландыруы',
+                'feature-expert-4': '✓ Арнайы нарық есептері',
+                'feature-expert-5': '✓ Риелторлармен тікелей байланыс',
+                'feature-expert-6': '✓ 24/7 арнайы қолдау',
+                'contact-sales': 'Сатылым бөліміне хабарласу',
+                'contact-title': 'Байланысқа шығыңыз',
+                'contact-desc': 'Мінсіз пәтеріңізді табуға дайынсыз ба? Біздің ЖИ ұсыныстары туралы сұрақтарыңыз бар ма? Біз сізге жылжымайтын мүлік бойынша ең ақылды шешім қабылдауға көмектесу үшін мұндамыз.',
+                'email': 'Email жіберіңіз',
+                'phone': 'Қоңырау шалыңыз',
+                'office': 'Кеңсе',
+                'address': 'Алматы, Қазақстан<br>Бизнес орталығы "Есентай"',
+                'form-title': 'Бізге хабарлама жіберіңіз',
+                'form-name': 'Толық аты',
+                'form-email': 'Email мекенжайы',
+                'form-phone': 'Телефон нөмірі',
+                'form-subject': 'Тақырып',
+                'inquiry-general': 'Жалпы сұрау',
+                'inquiry-demo': 'Демо сұрауы',
+                'inquiry-pricing': 'Баға туралы сұрақ',
+                'inquiry-support': 'Техникалық қолдау',
+                'form-message': 'Хабарлама',
+                'send-message': 'Хабарлама жіберу',
                 'cta-title': 'Жылжымайтын мүлік бойынша ақылды шешімдер қабылдауға дайынсыз ба?',
                 'cta-desc': 'Бюджет шеңберінде мінсіз үйді табу үшін ЖИ-ға сенетін мыңдаған қазақстандық отбасыларға қосылыңыз. Бүгін дербес пәтер іздеуін бастаңыз.',
                 'btn-start-analysis': 'Тегін талдауды бастау'
@@ -767,6 +1688,7 @@
             createParticles();
             animateCounters();
             setLanguage(currentLanguage); // Set initial language
+            initializePricingToggle();
         });
 
         // Add parallax effect to hero
@@ -775,6 +1697,35 @@
             const hero = document.querySelector('.hero');
             hero.style.transform = `translateY(${scrolled * 0.5}px)`;
         });
+
+        // Pricing toggle functionality
+        function initializePricingToggle() {
+            const toggleOptions = document.querySelectorAll('.toggle-option');
+            const toggleSlider = document.querySelector('.toggle-slider');
+            const monthlyPrices = document.querySelectorAll('.monthly-price');
+            const yearlyPrices = document.querySelectorAll('.yearly-price');
+            
+            toggleOptions.forEach((option, index) => {
+                option.addEventListener('click', () => {
+                    // Remove active class from all options
+                    toggleOptions.forEach(opt => opt.classList.remove('active'));
+                    // Add active class to clicked option
+                    option.classList.add('active');
+                    
+                    if (index === 0) {
+                        // Monthly selected
+                        toggleSlider.style.transform = 'translateX(0)';
+                        monthlyPrices.forEach(price => price.classList.remove('hidden'));
+                        yearlyPrices.forEach(price => price.classList.add('hidden'));
+                    } else {
+                        // Yearly selected
+                        toggleSlider.style.transform = 'translateX(33px)';
+                        monthlyPrices.forEach(price => price.classList.add('hidden'));
+                        yearlyPrices.forEach(price => price.classList.remove('hidden'));
+                    }
+                });
+            });
+        }
     </script>
 </body>
 </html>
