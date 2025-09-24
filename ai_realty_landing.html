@@ -1225,21 +1225,21 @@
                 
                 <div class="contact-form">
                     <h3 data-translate="form-title">Send us a message</h3>
-                    <form>
+                    <form id="contactForm">
                         <div class="form-group">
-                            <input type="text" placeholder="" required>
+                            <input type="text" id="fullName" placeholder="" required>
                             <label data-translate="form-name">Full Name</label>
                         </div>
                         <div class="form-group">
-                            <input type="email" placeholder="" required>
+                            <input type="email" id="email" placeholder="" required>
                             <label data-translate="form-email">Email Address</label>
                         </div>
                         <div class="form-group">
-                            <input type="tel" placeholder="" required>
+                            <input type="tel" id="phone" placeholder="" required>
                             <label data-translate="form-phone">Phone Number</label>
                         </div>
                         <div class="form-group">
-                            <select required>
+                            <select id="subject" required>
                                 <option value="" disabled selected></option>
                                 <option value="general" data-translate="inquiry-general">General Inquiry</option>
                                 <option value="demo" data-translate="inquiry-demo">Request Demo</option>
@@ -1249,7 +1249,7 @@
                             <label data-translate="form-subject">Subject</label>
                         </div>
                         <div class="form-group">
-                            <textarea placeholder="" rows="4" required></textarea>
+                            <textarea id="message" placeholder="" rows="4" required></textarea>
                             <label data-translate="form-message">Message</label>
                         </div>
                         <button type="submit" class="form-submit" data-translate="send-message">Send Message</button>
@@ -1689,6 +1689,7 @@
             animateCounters();
             setLanguage(currentLanguage); // Set initial language
             initializePricingToggle();
+            initializeContactForm();
         });
 
         // Add parallax effect to hero
@@ -1724,6 +1725,57 @@
                         yearlyPrices.forEach(price => price.classList.remove('hidden'));
                     }
                 });
+            });
+        }
+
+        // Contact form functionality
+        function initializeContactForm() {
+            const contactForm = document.getElementById('contactForm');
+            
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Get the email address from the contact section
+                const contactEmailElement = document.querySelector('.contact-method p');
+                const businessEmail = contactEmailElement ? contactEmailElement.textContent.trim() : 'hello@propertyai.kz';
+                
+                // Get form data
+                const fullName = document.getElementById('fullName').value;
+                const email = document.getElementById('email').value;
+                const phone = document.getElementById('phone').value;
+                const subjectSelect = document.getElementById('subject');
+                const subjectValue = subjectSelect.value;
+                const subjectText = subjectSelect.options[subjectSelect.selectedIndex].text;
+                const message = document.getElementById('message').value;
+                
+                // Create email content
+                const emailSubject = `PropertyAI Inquiry: ${subjectText}`;
+                const emailBody = `
+New inquiry from PropertyAI website:
+
+Name: ${fullName}
+Email: ${email}
+Phone: ${phone}
+Subject: ${subjectText}
+
+Message:
+${message}
+
+---
+This message was sent from the PropertyAI website contact form.
+                `.trim();
+                
+                // Create mailto link using the email from contacts section
+                const mailtoLink = `mailto:${businessEmail}?subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(emailBody)}`;
+                
+                // Open email client
+                window.location.href = mailtoLink;
+                
+                // Show success message (optional)
+                alert(`Opening your email client to send message to ${businessEmail}...`);
+                
+                // Reset form
+                contactForm.reset();
             });
         }
     </script>
