@@ -256,6 +256,199 @@
             font-weight: 500;
         }
 
+        /* Demo Section */
+        .demo {
+            position: relative;
+            z-index: 10;
+            padding: 6rem 2rem;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .demo-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .demo h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: white;
+            margin-bottom: 1rem;
+        }
+
+        .demo-subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 4rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .demo-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 4rem;
+            margin-bottom: 4rem;
+            align-items: start;
+        }
+
+        .demo-video {
+            animation: slideUp 0.6s ease-out both;
+        }
+
+        .video-wrapper {
+            position: relative;
+            width: 100%;
+            height: 0;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            overflow: hidden;
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 20px;
+        }
+
+        .custom-video-player {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 20px;
+            background: #000;
+        }
+
+        .video-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 20px;
+            opacity: 1;
+            transition: opacity 0.3s ease;
+            cursor: pointer;
+        }
+
+        .video-overlay.hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .play-button {
+            transition: transform 0.3s ease;
+        }
+
+        .play-button:hover {
+            transform: scale(1.1);
+        }
+
+        .custom-video-player::-webkit-media-controls-panel {
+            background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.8) 100%);
+        }
+
+        .custom-video-player::-webkit-media-controls-play-button,
+        .custom-video-player::-webkit-media-controls-volume-slider,
+        .custom-video-player::-webkit-media-controls-timeline {
+            filter: invert(1);
+        }
+
+        .demo-features {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            animation: slideUp 0.6s ease-out 0.2s both;
+        }
+
+        .demo-highlight {
+            display: flex;
+            gap: 1rem;
+            align-items: flex-start;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            border-radius: 15px;
+            padding: 1.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .demo-highlight:hover {
+            background: rgba(255, 255, 255, 0.15);
+            transform: translateY(-3px);
+        }
+
+        .highlight-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(45deg, #ff6b6b, #ee5a24);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+
+        .highlight-content h4 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: white;
+            margin-bottom: 0.5rem;
+        }
+
+        .highlight-content p {
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.5;
+            font-size: 0.95rem;
+        }
+
+        .demo-cta {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            border-radius: 20px;
+            padding: 3rem 2rem;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            animation: slideUp 0.6s ease-out 0.4s both;
+        }
+
+        .demo-cta h3 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 1rem;
+        }
+
+        .demo-cta p {
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 2rem;
+        }
+
+        .demo-cta .btn-primary {
+            display: inline-block;
+            text-decoration: none;
+        }
+
         /* Pricing Section */
         .pricing {
             position: relative;
@@ -944,6 +1137,19 @@
             .contact-form {
                 padding: 2rem;
             }
+
+            .demo {
+                padding: 4rem 1rem;
+            }
+
+            .demo-content {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .demo-cta {
+                padding: 2rem 1.5rem;
+            }
         }
     </style>
 </head>
@@ -995,7 +1201,7 @@
         </p>
         <div class="cta-buttons">
             <a href="#contact" class="btn-primary" data-translate="btn-get-recommendations">Get AI Recommendations</a>
-            <a href="#" class="btn-secondary" data-translate="btn-watch-demo">Watch Demo</a>
+            <a href="#demo" class="btn-secondary" data-translate="btn-watch-demo">Watch Demo</a>
         </div>
     </section>
 
@@ -1111,6 +1317,72 @@
         </div>
     </section>
 
+    <!-- Demo Video Section -->
+    <section class="demo" id="demo">
+        <div class="demo-container">
+            <h2 data-translate="demo-title">See PropertyAI in Action</h2>
+            <p class="demo-subtitle" data-translate="demo-subtitle">
+                Watch how our AI platform analyzes thousands of properties and finds your perfect apartment match in just minutes.
+            </p>
+            
+            <div class="demo-content">
+                <div class="demo-video">
+                    <div class="video-wrapper">
+                        <video 
+                            controls 
+                            preload="metadata"
+                            poster=""
+                            class="custom-video-player">
+                            <source src="Screen Recording 2025-09-24 at 11.08.17.mov" type="video/quicktime">
+                            <source src="Screen Recording 2025-09-24 at 11.08.17.mp4" type="video/mp4">
+                            <p>Your browser doesn't support HTML5 video. Here is a <a href="Screen Recording 2025-09-24 at 11.08.17.mov">link to the video</a> instead.</p>
+                        </video>
+                        <div class="video-overlay">
+                            <div class="play-button" id="playButton">
+                                <svg width="60" height="60" viewBox="0 0 60 60" fill="none">
+                                    <circle cx="30" cy="30" r="30" fill="rgba(255, 255, 255, 0.9)" opacity="0.9"/>
+                                    <polygon points="25,20 25,40 38,30" fill="#ff6b6b"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="demo-features">
+                    <div class="demo-highlight">
+                        <div class="highlight-icon">⚡</div>
+                        <div class="highlight-content">
+                            <h4 data-translate="demo-feature1-title">Real-time Property Analysis</h4>
+                            <p data-translate="demo-feature1-desc">Watch as our AI scans and evaluates hundreds of properties across Kazakhstan in real-time.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="demo-highlight">
+                        <div class="highlight-icon">🎯</div>
+                        <div class="highlight-content">
+                            <h4 data-translate="demo-feature2-title">Smart Filtering & Matching</h4>
+                            <p data-translate="demo-feature2-desc">See how we match properties to your exact budget, location preferences, and lifestyle needs.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="demo-highlight">
+                        <div class="highlight-icon">💡</div>
+                        <div class="highlight-content">
+                            <h4 data-translate="demo-feature3-title">Financial Breakdown & Insights</h4>
+                            <p data-translate="demo-feature3-desc">Get detailed cost analysis including mortgage options, government subsidies, and total ownership costs.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="demo-cta">
+                <h3 data-translate="demo-cta-title">Ready to try PropertyAI?</h3>
+                <p data-translate="demo-cta-desc">Join over 1,000+ satisfied users who found their perfect apartment with AI precision.</p>
+                <a href="#contact" class="btn-primary" data-translate="demo-cta-button">Start Your Search Now</a>
+            </div>
+        </div>
+    </section>
+
     <!-- Pricing Section -->
     <section class="pricing" id="pricing">
         <div class="pricing-container">
@@ -1203,23 +1475,21 @@
                             <div class="contact-icon">📧</div>
                             <div>
                                 <h4 data-translate="email">Email Us</h4>
+<<<<<<< Updated upstream
                                 <p>yeldar.yernazarov@nu.edu.kz</p>
+=======
+                                <p>alikhannurlanov24@gmail.com</p>
+>>>>>>> Stashed changes
                             </div>
                         </div>
                         <div class="contact-method">
                             <div class="contact-icon">📱</div>
                             <div>
                                 <h4 data-translate="phone">Call Us</h4>
-                                <p>+7 (727) 350-7890</p>
+                                <p>+7 (777) 690-3777</p>
                             </div>
                         </div>
-                        <div class="contact-method">
-                            <div class="contact-icon">🏢</div>
-                            <div>
-                                <h4 data-translate="office">Office</h4>
-                                <p data-translate="address">Almaty, Kazakhstan<br>Business Center "Esentai"</p>
-                            </div>
-                        </div>
+
                     </div>
                 </div>
                 
@@ -1312,6 +1582,17 @@
                 'step3-tag1': 'Ranked Results',
                 'step3-tag2': 'Financial Breakdown',
                 'step3-tag3': 'Pre-approval',
+                'demo-title': 'See PropertyAI in Action',
+                'demo-subtitle': 'Watch how our AI platform analyzes thousands of properties and finds your perfect apartment match in just minutes.',
+                'demo-feature1-title': 'Real-time Property Analysis',
+                'demo-feature1-desc': 'Watch as our AI scans and evaluates hundreds of properties across Kazakhstan in real-time.',
+                'demo-feature2-title': 'Smart Filtering & Matching',
+                'demo-feature2-desc': 'See how we match properties to your exact budget, location preferences, and lifestyle needs.',
+                'demo-feature3-title': 'Financial Breakdown & Insights',
+                'demo-feature3-desc': 'Get detailed cost analysis including mortgage options, government subsidies, and total ownership costs.',
+                'demo-cta-title': 'Ready to try PropertyAI?',
+                'demo-cta-desc': 'Join over 1,000+ satisfied users who found their perfect apartment with AI precision.',
+                'demo-cta-button': 'Start Your Search Now',
                 'pricing-title': 'Simple, Transparent Pricing',
                 'pricing-subtitle': 'Choose the plan that fits your property search needs',
                 'monthly': 'Monthly',
@@ -1409,6 +1690,17 @@
                 'step3-tag1': 'Ранжированные результаты',
                 'step3-tag2': 'Финансовая разбивка',
                 'step3-tag3': 'Предварительное одобрение',
+                'demo-title': 'Посмотрите PropertyAI в действии',
+                'demo-subtitle': 'Смотрите, как наша AI платформа анализирует тысячи объектов недвижимости и находит ваше идеальное соответствие квартире всего за несколько минут.',
+                'demo-feature1-title': 'Анализ недвижимости в реальном времени',
+                'demo-feature1-desc': 'Наблюдайте, как наш ИИ сканирует и оценивает сотни объектов недвижимости по всему Казахстану в реальном времени.',
+                'demo-feature2-title': 'Умная фильтрация и сопоставление',
+                'demo-feature2-desc': 'Посмотрите, как мы подбираем объекты недвижимости под ваш точный бюджет, предпочтения по местоположению и потребности в образе жизни.',
+                'demo-feature3-title': 'Финансовая разбивка и аналитика',
+                'demo-feature3-desc': 'Получите подробный анализ затрат, включая ипотечные варианты, государственные субсидии и общие затраты на владение.',
+                'demo-cta-title': 'Готовы попробовать PropertyAI?',
+                'demo-cta-desc': 'Присоединяйтесь к более чем 1000+ довольных пользователей, которые нашли свою идеальную квартиру с точностью ИИ.',
+                'demo-cta-button': 'Начать поиск сейчас',
                 'pricing-title': 'Простые, прозрачные цены',
                 'pricing-subtitle': 'Выберите тариф, который подходит для ваших потребностей в поиске недвижимости',
                 'monthly': 'Месячно',
@@ -1506,6 +1798,17 @@
                 'step3-tag1': 'Рейтингтелген нәтижелер',
                 'step3-tag2': 'Қаржылық бөліністіру',
                 'step3-tag3': 'Алдын ала бекіту',
+                'demo-title': 'PropertyAI іс-қимылын көріңіз',
+                'demo-subtitle': 'Біздің ЖИ платформасы мыңдаған жылжымайтын мүлікті қалай талдайтынын және бірнеше минут ішінде сіздің мінсіз пәтер сәйкестігін қалай табатынын көріңіз.',
+                'demo-feature1-title': 'Нақты уақыттағы жылжымайтын мүлік талдауы',
+                'demo-feature1-desc': 'Біздің ЖИ нақты уақытта Қазақстан бойынша жүздеген жылжымайтын мүлікті қалай сканерлейтінін және бағалайтынын көріңіз.',
+                'demo-feature2-title': 'Ақылды сүзу және сәйкестендіру',
+                'demo-feature2-desc': 'Біз жылжымайтын мүлікті сіздің дәл бюджетіңізге, орналасу қалауларыңызға және өмір салты қажеттіліктеріңізге қалай сәйкестендіретінімізді көріңіз.',
+                'demo-feature3-title': 'Қаржылық бөліністіру және аналитика',
+                'demo-feature3-desc': 'Ипотека опцияларын, мемлекеттік субсидияларды және жалпы меншік шығыстарын қамтитын толық шығын талдауын алыңыз.',
+                'demo-cta-title': 'PropertyAI-ды сынап көруге дайынсыз ба?',
+                'demo-cta-desc': 'ЖИ дәлдігімен мінсіз пәтерін тапқан 1000+ қанағаттанған пайдаланушыға қосылыңыз.',
+                'demo-cta-button': 'Іздеуді қазір бастау',
                 'pricing-title': 'Қарапайым, мөлдір баға белгілеу',
                 'pricing-subtitle': 'Жылжымайтын мүлік іздеу қажеттіліктеріңізге сай келетін жоспарды таңдаңыз',
                 'monthly': 'Айлық',
@@ -1602,6 +1905,50 @@
             });
         });
 
+        // Custom video player functionality
+        function initializeVideoPlayer() {
+            const video = document.querySelector('.custom-video-player');
+            const playButton = document.getElementById('playButton');
+            const videoOverlay = document.querySelector('.video-overlay');
+            
+            if (!video || !playButton || !videoOverlay) return;
+            
+            // Play button click
+            playButton.addEventListener('click', () => {
+                video.play();
+                videoOverlay.classList.add('hidden');
+            });
+            
+            // Video click to play/pause
+            video.addEventListener('click', () => {
+                if (video.paused) {
+                    video.play();
+                    videoOverlay.classList.add('hidden');
+                } else {
+                    video.pause();
+                    videoOverlay.classList.remove('hidden');
+                }
+            });
+            
+            // Show overlay when video is paused
+            video.addEventListener('pause', () => {
+                if (video.currentTime !== video.duration) {
+                    videoOverlay.classList.remove('hidden');
+                }
+            });
+            
+            // Hide overlay when video starts playing
+            video.addEventListener('play', () => {
+                videoOverlay.classList.add('hidden');
+            });
+            
+            // Handle video end
+            video.addEventListener('ended', () => {
+                videoOverlay.classList.remove('hidden');
+                video.currentTime = 0;
+            });
+        }
+
         // Set language function
         function setLanguage(lang) {
             currentLanguage = lang;
@@ -1690,6 +2037,7 @@
             setLanguage(currentLanguage); // Set initial language
             initializePricingToggle();
             initializeContactForm();
+            initializeVideoPlayer();
         });
 
         // Add parallax effect to hero
@@ -1737,7 +2085,7 @@
                 
                 // Get the email address from the contact section
                 const contactEmailElement = document.querySelector('.contact-method p');
-                const businessEmail = contactEmailElement ? contactEmailElement.textContent.trim() : 'yeldar.yernazarov@nu.edu.kz';
+                const businessEmail = contactEmailElement ? contactEmailElement.textContent.trim() : 'alikhannurlanov24@gmail.com';
                 
                 // Get form data
                 const fullName = document.getElementById('fullName').value;
